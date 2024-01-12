@@ -32,6 +32,7 @@ def get_info():
           *If you want 12 character password please enter /spc --create 12
 
           *If you want 16 character password please enter /spc --create 16
+          
           ================Extra Implementations=================
 
           *If you want 8 character password with non-special characters(&,+,%,${,}) /spc --create -w -sp 8
@@ -85,6 +86,11 @@ if __name__ == "__main__":
         else:
             welcome_page()
             login_status = False
+    select = input(':')
+    if select == '/h':
+        get_info()
+    else:
+        pass
 
 
 
