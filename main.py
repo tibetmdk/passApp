@@ -44,9 +44,11 @@ def get_info():
           
           """)
 
-def send_to_file():
-    pass
-
+def send_to_file(string,string2):
+    with open('passwords.txt','a') as file:
+        file.write('\n{} == :{}'.format(string2,string))
+        
+    
 def create_for_eight():
     numbers = string.digits
 
@@ -73,7 +75,9 @@ def create_for_eight():
 
     for i in psswrd:
         psswrd_final += i
-    print(psswrd_final)
+    goal = input('sifrenizi hangi platform icin kayit ediyorsunuz:')
+    print('Kaydedilecek Platform ismi {} Sifreniz: {}'.format(goal,psswrd_final))
+    send_to_file(psswrd_final,goal)
 
 def create_for_eight_none_special():
     numbers = string.digits
@@ -99,7 +103,9 @@ def create_for_eight_none_special():
 
     for i in psswrd[:8]:
         psswrd_final += i
-    print(psswrd_final)
+    goal = input('sifrenizi hangi platform icin kayit ediyorsunuz:')
+    print('Kaydedilecek Platform ismi {} Sifreniz: {}'.format(goal,psswrd_final))
+    send_to_file(psswrd_final,goal)
 
   
 
@@ -127,7 +133,9 @@ def create_for_twelve():
 
     for i in psswrd:
         psswrd_final += i
-    print(psswrd_final)
+    goal = input('sifrenizi hangi platform icin kayit ediyorsunuz:')
+    print('Kaydedilecek Platform ismi {} Sifreniz: {}'.format(goal,psswrd_final))
+    send_to_file(psswrd_final,goal)
 
 def create_for_twelve_none_special():
     numbers = string.digits
@@ -153,7 +161,9 @@ def create_for_twelve_none_special():
 
     for i in psswrd:
         psswrd_final += i
-    print(psswrd_final)
+    goal = input('sifrenizi hangi platform icin kayit ediyorsunuz:')
+    print('Kaydedilecek Platform ismi {} Sifreniz: {}'.format(goal,psswrd_final))
+    send_to_file(psswrd_final,goal)
     
 
 def create_for_sixteen():
@@ -180,7 +190,9 @@ def create_for_sixteen():
 
     for i in psswrd:
         psswrd_final += i
-    print(psswrd_final)
+    goal = input('sifrenizi hangi platform icin kayit ediyorsunuz:')
+    print('Kaydedilecek Platform ismi {} Sifreniz: {}'.format(goal,psswrd_final))
+    send_to_file(psswrd_final,goal)
 
 def create_for_sixteen_none_special():
     numbers = string.digits
@@ -206,7 +218,9 @@ def create_for_sixteen_none_special():
 
     for i in psswrd[:16]:
         psswrd_final += i
-    print(psswrd_final)
+    goal = input('sifrenizi hangi platform icin kayit ediyorsunuz:')
+    print('Kaydedilecek Platform ismi {} Sifreniz: {}'.format(goal,psswrd_final))
+    send_to_file(psswrd_final,goal)
     
 
 user_name = "a"
@@ -238,32 +252,61 @@ if __name__ == "__main__":
 
         if select == '/h':
             get_info()
+            info_input=input((':'))
 
-        elif select == "/spc --create 8":
-            print("Şifreniz aşağıda hazır durumda...")
-            create_for_eight()
+            if select == "/spc --create 8" or info_input == "/spc --create 8":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_eight()
 
-        elif select == "/spc --create -w -sp 8":
-            create_for_eight_none_special()
+            elif select == "/spc --create -w -sp 8" or info_input == "/spc --create -w -sp 8":
+                create_for_eight_none_special()
 
-        elif select == "/spc --create 12":
-            print("Şifreniz aşağıda hazır durumda...")
-            create_for_twelve()
+            elif select == "/spc --create 12" or info_input == "/spc --create 12":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_twelve()
 
-        elif select == "/spc --create -w -sp 12":
-            print("Şifreniz aşağıda hazır durumda...")
-            create_for_twelve_none_special()
+            elif select == "/spc --create -w -sp 12" or info_input == "/spc --create -w -sp 12":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_twelve_none_special()
 
-        elif select == "/spc --create 16":
-            print("Şifreniz aşağıda hazır durumda...")
-            create_for_sixteen()
+            elif select == "/spc --create 16" or info_input == "/spc --create 16":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_sixteen()
 
-        elif select == "/spc --create -w -sp 16":
-            print("Şifreniz aşağıda hazır durumda...")
-            create_for_sixteen_none_special()
+            elif select == "/spc --create -w -sp 16" or info_input == "/spc --create -w -sp 16":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_sixteen_none_special()
+
+            else:
+                print("A wrong keystroke")
 
         else:
-            print("A wrong keystroke")
+
+            if select == "/spc --create 8":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_eight()
+
+            elif select == "/spc --create -w -sp 8":
+                create_for_eight_none_special()
+
+            elif select == "/spc --create 12":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_twelve()
+
+            elif select == "/spc --create -w -sp 12":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_twelve_none_special()
+
+            elif select == "/spc --create 16":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_sixteen()
+
+            elif select == "/spc --create -w -sp 16":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_sixteen_none_special()
+
+            else:
+                print("A wrong keystroke")
 
 
 
