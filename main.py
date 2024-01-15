@@ -238,32 +238,61 @@ if __name__ == "__main__":
 
         if select == '/h':
             get_info()
+            info_input=input((':'))
 
-        elif select == "/spc --create 8":
-            print("Şifreniz aşağıda hazır durumda...")
-            create_for_eight()
+            if select == "/spc --create 8" or info_input == "/spc --create 8":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_eight()
 
-        elif select == "/spc --create -w -sp 8":
-            create_for_eight_none_special()
+            elif select == "/spc --create -w -sp 8" or info_input == "/spc --create -w -sp 8":
+                create_for_eight_none_special()
 
-        elif select == "/spc --create 12":
-            print("Şifreniz aşağıda hazır durumda...")
-            create_for_twelve()
+            elif select == "/spc --create 12" or info_input == "/spc --create 12":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_twelve()
 
-        elif select == "/spc --create -w -sp 12":
-            print("Şifreniz aşağıda hazır durumda...")
-            create_for_twelve_none_special()
+            elif select == "/spc --create -w -sp 12" or info_input == "/spc --create -w -sp 12":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_twelve_none_special()
 
-        elif select == "/spc --create 16":
-            print("Şifreniz aşağıda hazır durumda...")
-            create_for_sixteen()
+            elif select == "/spc --create 16" or info_input == "/spc --create 16":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_sixteen()
 
-        elif select == "/spc --create -w -sp 16":
-            print("Şifreniz aşağıda hazır durumda...")
-            create_for_sixteen_none_special()
+            elif select == "/spc --create -w -sp 16" or info_input == "/spc --create -w -sp 16":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_sixteen_none_special()
+
+            else:
+                print("A wrong keystroke")
 
         else:
-            print("A wrong keystroke")
+
+            if select == "/spc --create 8":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_eight()
+
+            elif select == "/spc --create -w -sp 8":
+                create_for_eight_none_special()
+
+            elif select == "/spc --create 12":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_twelve()
+
+            elif select == "/spc --create -w -sp 12":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_twelve_none_special()
+
+            elif select == "/spc --create 16":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_sixteen()
+
+            elif select == "/spc --create -w -sp 16":
+                print("Şifreniz aşağıda hazır durumda...")
+                create_for_sixteen_none_special()
+
+            else:
+                print("A wrong keystroke")
 
 
 
